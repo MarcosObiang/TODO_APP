@@ -7,23 +7,28 @@
         <div class="text-start" id="titleContainer">
             <h1>Mi Agenda</h1>
         </div>
-
-        <div id="formContainer">
-            <label for="nameInput" id="labelUsuario">Nombre de usuario </label>
-            <input type="text" id="nameInput" placeholder="">
-            <label for="passwordInput" id="labelContraseña">Contraseña </label>
-            <input type="password" id="passwordInput" placeholder="">
-        </div>
-
-        <div id="buttonsContainer">
-            <div id="loginButton">
-                <button  type="submit" class="btn btn-primary">Iniciar sesion</button>
-            </div>
-            <div id="registerButton">
-                <button type="submit" class="btn btn-primary">Registrarse</button>
+        <form method="post" [formGroup]="formulario" (ngSubmit)="enviar()">
+            <div id="formContainer">
+                <label for="nameInput" id="labelUsuario">Nombre de usuario </label>
+                <input formControlName="name" type="text" id="nameInput" placeholder="">
+                <label for="passwordInput" id="labelContraseña">Contraseña </label>
+                <input formControlName="password" type="password" id="passwordInput" placeholder="">
             </div>
 
-        </div>
+            <div id="buttonsContainer">
+                <div id="loginButton">
+                    <button type="submit" class="btn btn-primary">Iniciar sesion</button>
+                </div>
+                <div id="registerButton">
+                    <button type="submit" class="btn btn-primary">Registrarse</button>
+                </div>
+
+            </div>
+
+
+
+        </form>
+
 
 
     </div>
