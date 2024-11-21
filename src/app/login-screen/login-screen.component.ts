@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../Services/AuthService/auth.service';
 
 @Component({
   selector: 'app-login-screen',
@@ -10,12 +11,30 @@ export class LoginScreenComponent {
 
   formulario: FormGroup;
 
-  constructor(fomrBuilder: FormBuilder) {
+  constructor(
+    private fomrBuilder: FormBuilder,
+    private authService: AuthService,
+    
+  ) {
     this.formulario = fomrBuilder.group({ name: ["", [Validators.required, Validators.minLength(1)]], password: ["", [Validators.required, Validators.minLength(1),]] })
   }
 
-  enviar(): void {
-    console.log(this.formulario.value);
+  noEnviar(): void {
+
+    if(this.formulario.invalid){
+      return
+
+    }
+
+    else{
+      let validate =this.authService.validate(this.formulario.value.name, this.formulario.value.password);
+      if(validate){
+        alert("correcto")
+      }
+      else{
+        alert("incorrecto")
+      }
+    }
   }
 
 }

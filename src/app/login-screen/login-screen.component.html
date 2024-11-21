@@ -7,12 +7,12 @@
         <div class="text-start" id="titleContainer">
             <h1>Mi Agenda</h1>
         </div>
-        <form method="post" [formGroup]="formulario" (ngSubmit)="enviar()">
+        <form method="post" [formGroup]="formulario" (submit)="noEnviar()">
             <div id="formContainer">
                 <label for="nameInput" id="labelUsuario">Nombre de usuario </label>
                 <input formControlName="name" type="text" id="nameInput" placeholder="">
                 <label for="passwordInput" id="labelContraseña">Contraseña </label>
-                <input formControlName="password" type="password" id="passwordInput" placeholder="">
+                <input formControlName="password" type="password" id="passwordInput" placeholder="" view>
             </div>
 
             <div id="buttonsContainer">
@@ -20,7 +20,7 @@
                     <button type="submit" class="btn btn-primary">Iniciar sesion</button>
                 </div>
                 <div id="registerButton">
-                    <button type="submit" class="btn btn-primary">Registrarse</button>
+                    <button type="button" class="btn btn-primary">Registrarse</button>
                 </div>
 
             </div>
