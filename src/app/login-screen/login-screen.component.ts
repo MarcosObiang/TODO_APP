@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../Services/AuthService/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-screen',
@@ -12,6 +13,7 @@ export class LoginScreenComponent {
   formulario: FormGroup;
 
   constructor(
+    private router: Router,
     private fomrBuilder: FormBuilder,
     private authService: AuthService,
     
@@ -30,9 +32,10 @@ export class LoginScreenComponent {
       let validate =this.authService.validate(this.formulario.value.name, this.formulario.value.password);
       if(validate){
         alert("correcto")
+        this.router.navigate(['/main'])
       }
       else{
-        alert("incorrecto")
+        alert("Los datos de acceso son incorrectos")
       }
     }
   }

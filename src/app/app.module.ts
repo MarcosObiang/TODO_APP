@@ -8,13 +8,19 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginScreenComponent } from './login-screen/login-screen.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SingUpComponent } from './sing-up/sing-up.component';
+import { MainScreenComponent } from './main-screen/main-screen.component';
+import { TaskCreatorComponent } from './task-creator/task-creator.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    LoginScreenComponent
+    LoginScreenComponent,
+    SingUpComponent,
+    MainScreenComponent,
+    TaskCreatorComponent
   ],
   imports: [
     BrowserModule,

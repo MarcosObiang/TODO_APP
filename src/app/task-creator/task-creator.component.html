@@ -1,0 +1,29 @@
+<body id="mainContainer">
+
+    <header id="headerContainer">
+
+        <div>
+            <h1 id="createTaskText">Crear tarea</h1>
+        </div>
+
+        <form action="post" [formGroup]="formulario" (submit)="createTask()">
+
+            <div id ="formContainer">
+                <label for="taskNameInput" id="taskNameLabel">Nombre de la tarea </label>
+                <input type="text" formControlName="taskName" id="taskNameInput">
+                <label for="taskDescriptionInput" id="taskDescriptionLabel"> Describe la tarea </label>
+                <input type="text" formControlName="taskDescription" id="taskDescriptionInput">
+                <label for="taskDeadLineInput" id="taskDeadlineLabel">Fecha limite </label>
+                <input type="datetime-local" formControlName="taskDeadLine" id="taskDeadLineInput">
+            </div>
+        </form>
+
+        <div >
+
+        </div>
+
+
+    </header>
+    
+
+</body>

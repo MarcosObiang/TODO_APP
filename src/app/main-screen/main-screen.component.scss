@@ -1,0 +1,26 @@
+#mainContainer {
+
+    height: 100vh;
+    width: 100vw;
+    background-color: #48a9a6a4;
+
+    #headerContainer {
+        height: 10%;
+        background-color: #48a9a6;
+        padding: 20px;
+
+        #welcomeText {
+            color: antiquewhite;
+            font-size: xx-large;
+        }
+
+
+    }
+
+    #taskTextContainer{
+        padding: 20px;
+
+
+        
+    }
+}
